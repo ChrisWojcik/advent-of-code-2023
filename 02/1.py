@@ -13,7 +13,7 @@ for line in sys.stdin:
   line = line.strip()
 
   [game_name, rounds] = line.split(': ')
-  
+
   rounds = rounds.split('; ')
   rounds = [round.split(', ') for round in rounds]
   rounds = [choice.split(' ') for round in rounds for choice in round]

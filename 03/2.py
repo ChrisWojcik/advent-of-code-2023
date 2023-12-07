@@ -1,5 +1,5 @@
 import sys
-from collections import defaultdict 
+from collections import defaultdict
 
 numbers = []
 schematic = []
@@ -24,7 +24,7 @@ for line in sys.stdin:
 
       current_number += char
 
-      next_char = '' if pos == WIDTH - 1 else line[pos+1] 
+      next_char = '' if pos == WIDTH - 1 else line[pos+1]
 
       if not next_char.isdigit():
         start_pos = start_of_current_number
@@ -55,14 +55,14 @@ def get_adjacent_symbols(number, position):
   # symbol on same line to left
   if start > 0:
     char = schematic[line_number][start - 1]
-    
+
     if is_symbol(char):
       adjacent_symbols.append((char, (line_number, start - 1)))
-  
+
   # symbol on same line to right
   if end < WIDTH - 1:
     char = schematic[line_number][end + 1]
-    
+
     if is_symbol(char):
       adjacent_symbols.append((char, (line_number, end + 1)))
 

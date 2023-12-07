@@ -23,7 +23,7 @@ for line in sys.stdin:
 
       current_number += char
 
-      next_char = '' if pos == WIDTH - 1 else line[pos+1] 
+      next_char = '' if pos == WIDTH - 1 else line[pos+1]
 
       if not next_char.isdigit():
         start_pos = start_of_current_number
@@ -52,7 +52,7 @@ def is_part_number(number, position):
   # symbol on same line to left
   if start > 0 and is_symbol(schematic[line_number][start - 1]):
     return True
-  
+
   # symbol on same line to right
   if end < WIDTH - 1 and is_symbol(schematic[line_number][end + 1]):
     return True
@@ -61,7 +61,7 @@ def is_part_number(number, position):
   if line_number > 0:
     start_above = start - 1 if start > 0 else 0
     end_above = end + 1 if end < WIDTH - 1 else WIDTH - 1
-    
+
     for char in schematic[line_number - 1][start_above:end_above+1]:
       if is_symbol(char):
         return True
